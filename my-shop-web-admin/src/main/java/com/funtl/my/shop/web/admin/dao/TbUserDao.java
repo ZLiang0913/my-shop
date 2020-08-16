@@ -14,4 +14,16 @@ public interface TbUserDao {
      * @return
      */
     TbUser getByEmail(String email);
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    public List<TbUser> selectAll();
+
+    /**
+     * 新增用户
+     * @return
+     */
+    public void insert(TbUser tbUser);
 }

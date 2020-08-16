@@ -1,5 +1,6 @@
 package com.funtl.my.shop.web.admin.service;
 
+import com.funtl.my.shop.commons.dto.BaseResult;
 import com.funtl.my.shop.domain.TbUser;
 
 import java.util.List;
@@ -13,4 +14,12 @@ public interface TbUserService {
      * @return 用户信息
      */
     public TbUser getByEmail(String email, String password);
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    public List<TbUser> selectAll();
+
+    public BaseResult save(TbUser tbUser);
 }

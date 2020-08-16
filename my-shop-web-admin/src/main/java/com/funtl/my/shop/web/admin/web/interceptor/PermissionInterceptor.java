@@ -1,7 +1,7 @@
 package com.funtl.my.shop.web.admin.web.interceptor;
 
 import com.funtl.my.shop.commons.constant.ConstantUtils;
-import com.funtl.my.shop.domain.User;
+import com.funtl.my.shop.domain.TbUser;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,7 +22,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
         // 如果请求来自登录页
         System.out.println(modelAndView.getViewName());
         if (modelAndView.getViewName().endsWith("login")) {
-            User user = (User) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
+            TbUser user = (TbUser) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
             if (user!=null){
                 // 则直接重定向到首页不再显示登录页
                 httpServletResponse.sendRedirect("/main");

@@ -17,4 +17,51 @@
           tb_user AS a
         WHERE a.email = #{email}
     </select>
+
+    <select id="selectAll" resultType="TbUser">
+        SELECT
+        <include refid="tbUserCollums"/>
+        FROM
+        tb_user AS a
+        WHERE 1=1
+    </select>
+
+    <insert id="insert">
+        INSERT INTO tb_user (
+          `username`,
+          `password`,
+          `phone`,
+          `email`,
+          `created`,
+          `updated`
+        )
+        VALUES
+          (
+            #{username},
+            #{password},
+            #{phone},
+            #{email},
+            #{created},
+            #{updated}
+          )
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM tb_user WHERE id = #{id}
+    </delete>
+
+    <update id="update">
+        UPDATE
+          tb_user
+        SET
+          username = #{username},
+          password = #{password},
+          phone = #{phone},
+          email = #{email},
+          created = #{created},
+          updated = #{update}
+        WHERE id = #{id}
+    </update>
+
+
 </mapper>
