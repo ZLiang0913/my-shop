@@ -76,6 +76,11 @@ public class TbUserServiceImpl implements TbUserService {
         return baseResult;
     }
 
+    @Override
+    public TbUser getById(Long id) {
+        return tbUserDao.getById(id);
+    }
+
     /**
      * 检查用户参数是否正确
      * @param user

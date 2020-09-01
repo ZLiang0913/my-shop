@@ -18,6 +18,14 @@
         WHERE a.email = #{email}
     </select>
 
+    <select id="getById" resultType="TbUser">
+        SELECT
+        <include refid="tbUserCollums"/>
+        FROM
+        tb_user AS a
+        WHERE a.id = #{id}
+    </select>
+
     <select id="selectAll" resultType="TbUser">
         SELECT
         <include refid="tbUserCollums"/>

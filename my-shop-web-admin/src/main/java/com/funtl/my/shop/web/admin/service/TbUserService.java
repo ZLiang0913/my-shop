@@ -22,4 +22,6 @@ public interface TbUserService {
     public List<TbUser> selectAll();
 
     public BaseResult save(TbUser tbUser);
+
+    TbUser getById(Long id);
 }

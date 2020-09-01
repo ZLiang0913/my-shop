@@ -26,4 +26,6 @@ public interface TbUserDao {
      * @return
      */
     public void insert(TbUser tbUser);
+
+    TbUser getById(Long id);
 }
