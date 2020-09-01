@@ -28,4 +28,11 @@ public interface TbUserDao {
     public void insert(TbUser tbUser);
 
     TbUser getById(Long id);
+
+    /**
+     * 搜索
+     * @param tbUser
+     * @return
+     */
+    List<TbUser> search(TbUser tbUser);
 }

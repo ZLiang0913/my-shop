@@ -71,5 +71,22 @@
         WHERE id = #{id}
     </update>
 
+    <select id="search" resultType="TbUser">
+        SELECT
+        <include refid="tbUserCollums"/>
+        FROM
+        tb_user AS a
+        <where>
+            <if test="username != null and username != ''">
+                OR username LIKE concat('%',#{username},'%')
+            </if>
+            <if test="phone != null and phone != ''">
+                OR phone LIKE concat('%',#{phone},'%')
+            </if>
+            <if test="email != null and email != ''">
+                OR email LIKE concat('%',#{email},'%')
+            </if>
+        </where>
+    </select>
 
 </mapper>

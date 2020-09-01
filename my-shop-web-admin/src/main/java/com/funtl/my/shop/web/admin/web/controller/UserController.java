@@ -75,4 +75,16 @@ public class UserController {
             return "user_form";
         }
     }
+
+    /**
+     * 用户列表搜索
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "search", method = RequestMethod.POST)
+    public String userList(String keyword,Model model){
+        List<TbUser> tbUsers = userService.search(keyword.trim());
+        model.addAttribute("tbUsers",tbUsers);
+        return "user_list";
+    }
 }

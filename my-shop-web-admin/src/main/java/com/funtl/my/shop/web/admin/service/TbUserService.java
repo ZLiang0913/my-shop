@@ -24,4 +24,6 @@ public interface TbUserService {
     public BaseResult save(TbUser tbUser);
 
     TbUser getById(Long id);
+
+    List<TbUser> search(String keyword);
 }
